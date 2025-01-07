@@ -1,1 +1,1 @@
-# ideal-engine
+Era Bikes is a platform providing a community for cycling enthusiasts who share a passion for all things bicycling. Through its innovative online platform, Era Bikes connects riders from around the world, enabling them to share experiences, discover new trails, buy and sell related items, and engage in meaningful conversations about their cycling journeys. EraBikes is an MVP and due to the proprietary nature of the code, I can only provide code snippets of my code. This repository contains React, .NET, and SQL code for the interactive forum.
