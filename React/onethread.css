@@ -1,0 +1,33 @@
+.card {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  .oneThreadCard {
+    border-radius: 8px;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #FFFFFF;
+  }
+
+  .w-background{
+    background-color: #FFFFFF;
+
+  }
+  
+  .card-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+  
+  .card-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .badge {
+    font-size: 0.8rem;
+    padding: 0.5em 0.75em;
+  }

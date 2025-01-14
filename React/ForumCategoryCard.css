@@ -1,0 +1,120 @@
+/* Card Styles */
+.card {
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+/* Specific to ForumAnswerCard */
+.forumAnswerCard {
+  background-color: whitesmoke;
+  margin-left: 200px;
+}
+
+.threadCardBody {
+  text-align: left;
+  color: rgb(44, 44, 44);
+  line-height: 1.5;
+}
+
+.answer-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.author-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #dee2e6;
+}
+
+.author-name {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.moving-right{
+  padding-left: 100px;
+}
+
+.answer-date {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 10px;
+}
+
+/* Button Styles */
+.editButton {
+  background-color: #e7e7e7;
+  color: black;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Forum Header Styles */
+.forumHeader {
+  overflow: hidden;
+  background-color: #1A123C;
+  padding: 20px 10px;
+}
+
+.forum-header {
+  color: black;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.forum-header-content {
+  margin-bottom: 20px;
+}
+
+.forum-title {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.forum-subtitle {
+  font-size: 1.2rem;
+  margin: 5px 0 0;
+}
+
+/* Text Hover Effect */
+.text-hover {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.text-hover:hover {
+  color: #fc6203;
+}
