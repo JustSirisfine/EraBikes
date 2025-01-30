@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import logger from "sabio-debug";
 import NewAnswerModal from "./NewAnswerModal";
 import { toast } from "react-toastify";
 import ForumAnswerCard from "./ForumAnswerCard";
@@ -10,12 +9,11 @@ import { useNavigate } from "react-router-dom";
 import "./onethread.css";
 import PropTypes from "prop-types";
 
-const _logger = logger.extend("weird");
 
 function OneThread(props) {
   const params = useParams();
   const navigate = useNavigate();
-  _logger("params", params);
+  console.log("params", params);
 
   const [showModal, setShowModal] = useState(false);
   const [submitted, setSubmitted] = useState(0);
@@ -29,7 +27,7 @@ function OneThread(props) {
   });
 
   const mapForumAnswers = (oneAnswer) => {
-    _logger("MAP FORUM ANSWERS", oneAnswer);
+    console.log("MAP FORUM ANSWERS", oneAnswer);
     return (
       <ForumAnswerCard
         key={oneAnswer.id}
@@ -39,8 +37,7 @@ function OneThread(props) {
   };
 
   useEffect(() => {
-    _logger(forumAnswers, "Forum Answers useEffect");
-
+    console.log(forumAnswers, "Forum Answers useEffect");
     forumService
       .getByAnswerId(params.forumid)
       .then(onGetByAnswerIdSuccess)
@@ -48,7 +45,7 @@ function OneThread(props) {
   }, [params.forumid, submitted]);
 
   const onGetByAnswerIdSuccess = (response) => {
-    _logger("Answer Id Success", response);
+    console.log("Answer Id Success", response);
     const originalData = response.data.item;
 
     setForumAnswers((prevState) => {
@@ -60,12 +57,12 @@ function OneThread(props) {
   };
 
   const onGetByAnswerIdError = (response) => {
-    _logger("Get Answer Id Error", response);
+    console.log("Get Answer Id Error", response);
     toast.error("Action failed, please try again.");
   };
 
   const handleSaveThread = (values) => {
-    _logger("New Thread Data:", values, props.currentUser.id, params.forumid);
+    console.log("New Thread Data:", values, props.currentUser.id, params.forumid);
 
     let payload = {};
     payload.answerTitle = "";
@@ -78,13 +75,13 @@ function OneThread(props) {
   };
 
   const onAddSuccess = (response) => {
-    _logger("successs", response);
+    console.log("successs", response);
     toast.success("Success!");
     setSubmitted((prevState) => prevState + 1);
   };
 
   const onAddError = (response) => {
-    _logger(response);
+    console.log(response);
     toast.error("Failure adding, please try again");
   };
 
