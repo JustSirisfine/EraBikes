@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import debug from "sabio-debug";
 import forumSchema from "../../schemas/forumSchema";
 import { mapLookUpItem } from "helper/utils";
 import lookUpService from "services/lookUpService";
 import forumService from "../../services/forumService";
 import toastr from "toastr";
 
-const _logger = debug.extend("Forum Form");
 
 function ForumForm() {
-  _logger("form works?");
+  console.log("form is working");
 
   const [formData] = useState({
     forumCategoryId: null,
@@ -31,19 +29,19 @@ function ForumForm() {
       isPrivate: false,
     };
 
-    _logger(payload);
+    console.log(payload);
     forumService
       .addForumPost(payload)
       .then(onAddingSuccess)
       .catch(onAddingError);
   };
   const onAddingError = (error) => {
-    _logger("Error getting types", error);
+    console.log("Error getting types", error);
     toastr.error("Thread could not be created - try again!");
   };
 
   const onAddingSuccess = (success) => {
-    _logger("Success getting types", success);
+    console.log("Success getting types", success);
     toastr.success("Successful!");
   };
 
@@ -55,13 +53,13 @@ function ForumForm() {
   }, []);
 
   const onLookUpError = (error) => {
-    _logger("Error getting types", error);
+    console.log("Error getting types", error);
   };
 
   const onLookupSuccess = (data) => {
-    _logger(data, "DATA");
+    console.log(data, "DATA");
     const blogCategories = data.item.forumCategories;
-    _logger("BLOG CAT", blogCategories);
+    console.log("BLOG CAT", blogCategories);
     setLookUps((prevState) => {
       let newState = { ...prevState };
       newState.blogTypes = blogCategories;
