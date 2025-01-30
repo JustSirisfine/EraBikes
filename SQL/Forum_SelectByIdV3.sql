@@ -1,11 +1,11 @@
 ALTER PROCEDURE [dbo].[Forum_SelectByIdV3]
-				@Id INT
+		@Id INT
 
 /* ---------------- TEST CODE ------------
 DECLARE @Id INT = 4
 
 EXECUTE [dbo].[Forum_SelectByIdV3]
-		@Id
+	@Id
 
 SELECT * FROM [dbo.Forum]
 */ ---------------END TEST CODE-----------
