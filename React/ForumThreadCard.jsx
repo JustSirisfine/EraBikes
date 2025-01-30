@@ -1,13 +1,12 @@
 import PropTypes from "prop-types";
 import React from "react";
-import debug from "sabio-debug";
 import "./onethread.css";
 import { useNavigate } from "react-router-dom";
 
-const _logger = debug.extend("ForumPosts");
+
 function ForumThreadCard(props) {
   const navigate = useNavigate();
-  _logger("Threads", props);
+  console.log("Threads", props);
 
   const navigateToForum = async () => {
     navigate(`/dashboard/forum/${props.oneThread.id}`);
