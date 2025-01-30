@@ -1,15 +1,13 @@
 import React from "react";
-import debug from "sabio-debug";
 import PropTypes from "prop-types";
 import "./ForumCategoryCard.css";
 
-const _logger = debug.extend("Forum Answer card");
 
 function ForumAnswerCard(props) {
-  _logger("Thread Posts", props);
+  console.log("Thread Posts", props);
 
   let newAuthor = JSON.parse(props.oneAnswer.answerAuthorId);
-  _logger("Parsed Author Info", newAuthor);
+  console.log("Parsed Author Info", newAuthor);
 
   return (
     <React.Fragment>
