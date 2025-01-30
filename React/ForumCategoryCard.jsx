@@ -1,10 +1,9 @@
 import React from "react";
-import debug from "sabio-debug";
 import PropTypes from "prop-types";
 
-const _logger = debug.extend("ForumPosts");
+
 function ForumPosts(props) {
-  _logger("Thread Posts", props);
+  console.log("Thread Posts", props);
 
   const onCategoryClick = () => {
     props.setSelectedCat(props.oneForumCat.id);
