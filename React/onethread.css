@@ -4,7 +4,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
   }
-  .oneThreadCard {
+
+.oneThreadCard {
     border-radius: 8px;
     border: 1px solid #FFFFFF;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -12,22 +13,21 @@
     background-color: #FFFFFF;
   }
 
-  .w-background{
+.w-background {
     background-color: #FFFFFF;
-
   }
   
-  .card-title {
+.card-title {
     font-weight: 600;
     font-size: 1.25rem;
   }
   
-  .card-text {
+.card-text {
     font-size: 0.95rem;
     line-height: 1.4;
   }
   
-  .badge {
+.badge {
     font-size: 0.8rem;
     padding: 0.5em 0.75em;
   }
