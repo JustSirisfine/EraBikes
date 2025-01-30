@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import logger from "sabio-debug";
 import ForumCategoryCard from "./ForumCategoryCard";
 import lookUpService from "../../services/lookUpService";
 import ForumThreadCard from "./ForumThreadCard";
@@ -7,10 +6,8 @@ import FooterWithLinks from "layouts/marketing/footers/FooterWithLinks";
 import { Button } from "react-bootstrap";
 import forumService from "../../services/forumService";
 
-const _logger = logger.extend("forum");
-
 const ForumCategories = () => {
-  _logger("Forum Categories");
+  console.log("Forum Categories")
 
   const [forumData, setForumData] = useState({
     originalData: [],
@@ -32,11 +29,11 @@ const ForumCategories = () => {
   }, []);
 
   const onLookUpError = (error) => {
-    _logger("Error getting types", error);
+    console.log("Error getting types", error);
   };
 
   const onLookupSuccess = (data) => {
-    _logger("datadatadatas", data.item.forumCategories);
+    console.log("datadatadatas", data.item.forumCategories);
 
     const forumCategories = data.item.forumCategories;
     setLookUps((prevState) => {
@@ -58,7 +55,7 @@ const ForumCategories = () => {
   }, [selectedCat]);
 
   const onGetByIdSuccess = (response) => {
-    _logger("onGetByIdSuccess", response);
+    console.log("onGetByIdSuccess", response);
     const idData = response.data.item.pagedItems;
     setForumData((prevState) => {
       let newState = { ...prevState };
@@ -73,7 +70,7 @@ const ForumCategories = () => {
   };
 
   const onGetByIdError = (response) => {
-    _logger("onGerByIdError", response);
+    console.log("onGerByIdError", response);
   };
 
   const mapForumCat = (oneForumCat) => {
@@ -108,7 +105,6 @@ const ForumCategories = () => {
               placeholder="Search"
               aria-label="Search"
             />
-            <div></div>
             <Button
               className="btn btn-outline-success"
               id="Search"
