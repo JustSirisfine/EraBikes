@@ -3,13 +3,10 @@ import PropTypes from "prop-types";
 import { Modal, Button } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import logger from "sabio-debug";
 import lookUpService from "../../services/lookUpService";
 import "./ForumCategoryCard.css";
 
-const _logger = logger.extend("forum");
 
-// Validation Schema for Formik Form
 const threadValidationSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
   description: Yup.string()
@@ -19,7 +16,7 @@ const threadValidationSchema = Yup.object().shape({
 });
 
 const NewThreadModal = ({ isShow, handleClose, handleSave }) => {
-  _logger("behold");
+  console.log("behold");
   const [lookUps, setLookUps] = useState({
     forumTypes: [],
   });
@@ -31,11 +28,11 @@ const NewThreadModal = ({ isShow, handleClose, handleSave }) => {
       .catch(onLookUpError);
   }, []);
   const onLookUpError = (error) => {
-    _logger("Error getting types", error);
+    console.log("Error getting types", error);
   };
 
   const onLookupSuccess = (data) => {
-    _logger("datadatadatas", data.item.forumCategories);
+    console.log("datadatadatas", data.item.forumCategories);
 
     const forumCategories = data.item.forumCategories;
     setLookUps((prevState) => {
