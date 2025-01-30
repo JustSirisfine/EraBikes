@@ -1,11 +1,11 @@
 ALTER proc [dbo].[Forum_Insert]
-					@Name nvarchar(4000)
-					,@Description nvarchar(4000)
-					,@ForumCategoryId int
-					,@AuthorId int
-					,@IsPrivate bit
+		@Name nvarchar(4000)
+		,@Description nvarchar(4000)
+		,@ForumCategoryId int
+		,@AuthorId int
+		,@IsPrivate bit
 
-					,@Id int OUTPUT
+		,@Id int OUTPUT
 
 /* ------------ TEST CODE ------------
 Declare @Name nvarchar(4000) = ''
@@ -29,23 +29,23 @@ as
 
 BEGIN
 
-		INSERT INTO [dbo].[Forum]
-      (
-         [Name]
-         ,[Description]
-         ,[ForumCategoryId]
-         ,[CreatedBy]
-         ,[IsPrivate]
-		  )
-		VALUES
-      (
-		    @Name 
-			  ,@Description 
-			  ,@ForumCategoryId 
-			  ,@AuthorId
-			  ,@IsPrivate 
-			)
+	INSERT INTO [dbo].[Forum]
+	      (
+	         [Name]
+	         ,[Description]
+	         ,[ForumCategoryId]
+	         ,[CreatedBy]
+	         ,[IsPrivate]
+	      )
+	VALUES
+     	      (
+		@Name 
+		,@Description 
+		,@ForumCategoryId 
+		,@AuthorId
+		,@IsPrivate 
+	      )
 
-			SET @Id = SCOPE_IDENTITY()
+	SET @Id = SCOPE_IDENTITY()
 
 END
