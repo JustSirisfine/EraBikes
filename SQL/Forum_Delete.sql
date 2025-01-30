@@ -1,5 +1,5 @@
 ALTER proc [dbo].[Forum_Delete]
-					@Id int
+	@Id int
 
 /* ------------- TEST CODE -----------
 select* from [dbo].[Forum]
@@ -15,6 +15,6 @@ select* from [dbo].[Forum]
 as
 
 BEGIN
-			DELETE FROM [dbo].[Forum]
-			WHERE [Id] = @Id
+	DELETE FROM [dbo].[Forum]
+	WHERE [Id] = @Id
 END
