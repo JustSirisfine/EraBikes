@@ -3,16 +3,14 @@ import PropTypes from "prop-types";
 import { Modal, Button } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import logger from "sabio-debug";
 
-const _logger = logger.extend("New Answer Modal");
 
 const threadValidationSchema = Yup.object().shape({
   description: Yup.string().min(1).max(4000),
 });
 
 const NewAnswerModal = ({ isShow, handleClose, handleSave }) => {
-  _logger("New Answer Modal");
+  console.log("New Answer Modal");
 
   function onButtonClicked(values) {
     handleSave(values);
