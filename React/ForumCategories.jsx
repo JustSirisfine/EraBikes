@@ -33,7 +33,6 @@ const ForumCategories = () => {
   };
 
   const onLookupSuccess = (data) => {
-    console.log("datadatadatas", data.item.forumCategories);
 
     const forumCategories = data.item.forumCategories;
     setLookUps((prevState) => {
@@ -45,7 +44,6 @@ const ForumCategories = () => {
   };
 
   useEffect(() => {
-    _logger(selectedCat, "potato");
     if (selectedCat) {
       forumService
         .getByCategoryId(selectedCat, 0, 19)
